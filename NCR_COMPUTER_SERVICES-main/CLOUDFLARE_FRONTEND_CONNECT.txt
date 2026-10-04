@@ -1,0 +1,28 @@
+NCR SERVICES — Cloudflare Frontend Connection
+
+1. Deploy the Worker from the cloudflare folder:
+   npx.cmd wrangler deploy
+
+2. Wrangler prints a URL similar to:
+   https://ncr-services-api.<your-subdomain>.workers.dev
+
+3. Open the root file `api-config.js`.
+
+4. Replace ONLY this line's URL:
+   window.NCR_API_BASE = 'https://REPLACE-WITH-YOUR-WORKER-URL.workers.dev/api';
+
+   with your real Worker API URL, for example:
+   window.NCR_API_BASE = 'https://ncr-services-api.example.workers.dev/api';
+
+5. Save all files and push:
+   git add .
+   git commit -m "Connect RGB frontend to Cloudflare Worker"
+   git push
+
+6. Product reads and order creation will use the Cloudflare Worker.
+   During migration, any frontend endpoint not yet implemented in the Worker can fall back to the existing Render API.
+
+IMPORTANT:
+- Do not put Cloudflare API tokens in frontend code.
+- Keep D1 ID in cloudflare/wrangler.jsonc and secrets in Cloudflare secrets/environment variables.
+- The Worker must have its D1 `DB` and R2 `PRODUCT_IMAGES` bindings configured.

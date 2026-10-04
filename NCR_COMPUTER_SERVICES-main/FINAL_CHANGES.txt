@@ -1,0 +1,46 @@
+NCR SERVICES — FINAL CHANGES IN THIS ZIP
+
+1. ADMIN PRODUCT PHOTOS
+- Add Product now has a multi-select Product Photos input.
+- Select multiple photos in one file-picker action.
+- Each image is limited to 5 MB.
+- First photo is the main photo.
+- Existing product photos are shown in the edit form.
+- Customer Product Detail page has a thumbnail gallery.
+- Product cards show a photo-count badge when more than one photo exists.
+- Product records keep both image (backward compatibility) and images[] (gallery).
+
+2. COUPON CODES
+- New Admin → Coupons page.
+- Create/edit/disable coupon codes.
+- Percentage (%) or fixed ₹ discount.
+- Optional minimum order amount.
+- Optional maximum discount cap for percentage coupons.
+- Optional maximum usage limit (0 = unlimited).
+- Optional start and expiry date/time.
+- Active/inactive switch.
+- Customer Checkout now has coupon code input and Apply button.
+- Coupon is validated by the backend before order placement.
+- Coupon usage count increments after successful order.
+- Order records store coupon_code and discount.
+- Invoice/bill shows the coupon code next to the discount when present.
+
+3. DEPLOYMENT
+- package.json start command: npm start
+- Render build command: npm install
+- Render start command: npm start
+- render.yaml uses ncr-services-store.
+- DEPLOY_GITHUB_RENDER_STEP_BY_STEP.txt contains first-time and next-time VS Code/GitHub/Render instructions.
+
+4. DEFAULT ADMIN LOGIN
+ID: admin@ncrservices.local
+Password: 7730
+Change it later from Admin → Settings.
+
+5. TESTING PERFORMED
+- Node syntax checks passed for JS files.
+- Inline admin/customer HTML scripts passed Node syntax checks.
+- Local integration test passed for backend health, admin login, multi-photo upload/storage, coupon creation, coupon validation, coupon-discounted order, and invoice PDF generation.
+
+6. IMPORTANT RENDER STORAGE NOTE
+The project stores runtime data in server/data.json and uploaded product images in assets/products. Free/ephemeral hosting storage can be lost during certain redeploys/restarts. For permanent production product images/data, use persistent or external storage or keep permanent images in the repository.

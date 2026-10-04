@@ -1,0 +1,12 @@
+NCR SERVICES - PAYMENT METHODS
+
+Implemented in this build:
+1. UPI / QR Payment using assets/upi-qr.jpg.
+2. Cash on Delivery / Pickup.
+3. Pay after confirmation.
+
+The checkout sends payment_method to POST /api/orders. The server stores payment_method and payment_status.
+
+For card/netbanking/automatic UPI verification, add a payment gateway later. Do not put gateway secret keys in app.js.
+
+Set the UPI ID on Render with UPI_ID or change it from Admin > Settings.

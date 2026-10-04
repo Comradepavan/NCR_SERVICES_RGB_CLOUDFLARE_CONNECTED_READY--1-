@@ -1,0 +1,95 @@
+{
+  "catalog_version": 8,
+  "settings": {
+    "business_name": "NCR SERVICES",
+    "business_email": "pavankumarvaali@gmail.com",
+    "business_phone": "+91 77309 82924",
+    "upi_id": "7730982924-6@ybl"
+  },
+  "users": [
+    {
+      "id": 1,
+      "name": "NCR Administrator",
+      "email": "admin@ncrservices.local",
+      "password": "7730",
+      "phone": "+91 77309 82924",
+      "role": "admin"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "sku": "NCR-LAPT-0001",
+      "name": "Demo",
+      "category": "Laptop",
+      "description": "",
+      "price": 100,
+      "mrp": 100,
+      "stock": 0,
+      "warranty": "2 Year Warranty",
+      "image": "products/laptop.svg",
+      "active": 1
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "invoice_no": "NCR/INV/2026/0001",
+      "customer_name": "Demo Customer",
+      "phone": "9999999999",
+      "email": "",
+      "address": "",
+      "items_json": "[{\"id\":1,\"sku\":\"NCR-LAPT-0001\",\"name\":\"Demo\",\"qty\":1,\"price\":100,\"warranty\":\"2 Year Warranty\",\"hsn\":\"\",\"image\":\"products/laptop.svg\"}]",
+      "subtotal": 100,
+      "discount": 0,
+      "tax": 0,
+      "shipping": 0,
+      "total": 100,
+      "status": "Pending",
+      "bill_token": "39ef1d492f55d9e734acbc1414f4d12c488c",
+      "created_at": "2026-09-17T09:26:42.348Z"
+    }
+  ],
+  "quotes": [
+    {
+      "id": 1,
+      "quote_no": "NCR/QUO/2026/0001",
+      "customer_name": "Demo Customer",
+      "phone": "9999999999",
+      "email": "",
+      "address": "",
+      "city": "",
+      "state": "",
+      "pin": "",
+      "items_json": "[{\"id\":1,\"sku\":\"NCR-LAPT-0001\",\"name\":\"Demo\",\"qty\":1,\"price\":100,\"warranty\":\"2 Year Warranty\",\"hsn\":\"\",\"image\":\"products/laptop.svg\"}]",
+      "subtotal": 100,
+      "discount": 0,
+      "tax": 0,
+      "total": 100,
+      "status": "Draft",
+      "created_at": "2026-09-17T09:26:41.174Z"
+    }
+  ],
+  "service_requests": [],
+  "counters": {
+    "quote_2026": 1,
+    "invoice_2026": 1
+  },
+  "request_keys": {
+    "p1": {
+      "type": "product",
+      "id": 1,
+      "created_at": "2026-09-17T09:26:39.866Z"
+    },
+    "q1": {
+      "type": "quote",
+      "id": 1,
+      "created_at": "2026-09-17T09:26:41.174Z"
+    },
+    "o1": {
+      "type": "order",
+      "id": 1,
+      "created_at": "2026-09-17T09:26:42.348Z"
+    }
+  }
+}

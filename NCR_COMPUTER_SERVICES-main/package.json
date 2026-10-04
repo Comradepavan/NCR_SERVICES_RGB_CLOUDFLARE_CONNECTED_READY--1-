@@ -1,0 +1,1 @@
+{"name":"ncr-services","version":"7.2.0","private":true,"scripts":{"start":"node --trace-deprecation server/server.js","dev":"node --watch server/server.js"},"engines":{"node":">=18"}}

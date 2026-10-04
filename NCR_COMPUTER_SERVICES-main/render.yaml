@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: ncr-services-store
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start

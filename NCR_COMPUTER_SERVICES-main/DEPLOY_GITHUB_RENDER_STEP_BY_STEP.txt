@@ -1,0 +1,84 @@
+NCR SERVICES — FINAL VS CODE + GITHUB + RENDER GUIDE
+
+1) FIRST-TIME SETUP
+- Extract the ZIP. Do NOT upload the ZIP itself to GitHub.
+- This fixed ZIP is already flattened for GitHub/Render. After extraction, the GitHub repository root must contain: index.html, app.js, app.css, package.json, server/, admin/, assets/.
+- Most important: server/server.js is exactly at repository-root/server/server.js in this fixed package.
+
+2) VS CODE TEST
+- Open the extracted project folder in VS Code.
+- Open Terminal → New Terminal.
+- Run: npm install
+- Run: npm start
+- Open http://localhost:3000 only for testing the backend locally. Do not use Live Server for the final hosted site.
+
+3) GITHUB UPLOAD
+A. Create a GitHub repository named ncr-services-store.
+B. Easiest VS Code method:
+   git init
+   git branch -M main
+   git add .
+   git commit -m "Upload NCR SERVICES website"
+   git remote add origin https://github.com/YOUR-USERNAME/ncr-services-store.git
+   git push -u origin main
+C. Verify on GitHub that server/server.js exists and package.json is at the root.
+
+4) RENDER NEW WEB SERVICE
+- Render Dashboard → + New → Web Service.
+- Git Provider → GitHub → select ncr-services-store → Connect.
+- Branch: main.
+- Root Directory: EMPTY.
+- Runtime/Language: Node.
+- Build Command: npm install.
+- Start Command: npm start.
+- Plan: Free.
+- Click Create Web Service.
+- Wait for Live.
+- Test https://YOUR-RENDER-DOMAIN/api/health.
+
+5) ADMIN LOGIN
+Default admin login:
+ID: admin@ncrservices.local
+Password: 7730
+You can change it later from Admin → Settings.
+
+6) MULTIPLE PRODUCT PHOTOS
+- Admin → Products → Add Product.
+- Select Product Photos.
+- Choose multiple images in the Windows file picker using Ctrl/Shift or by selecting several files.
+- Each image can be up to 5 MB.
+- The first image is the main product image.
+- Additional images appear as thumbnails on the customer Product Detail page.
+- Editing a product lets you add more photos or remove current photos.
+
+7) COUPONS
+- Admin → Coupons.
+- Add Coupon.
+- Choose Percentage (%) or Fixed (₹).
+- Enter discount value.
+- Optional: minimum order, maximum discount, maximum uses, start time and expiry.
+- Customer enters the code on Checkout and clicks Apply.
+- The backend validates the coupon again when the order is placed.
+- The order/invoice records the coupon code and discount.
+
+8) NEXT TIME YOU MAKE CHANGES
+A. Make a backup ZIP if desired.
+B. Open the same GitHub project folder in VS Code.
+C. Edit the required files.
+D. Test with npm install (only when package.json changes) and npm start.
+E. Save all changes.
+F. Run:
+   git add .
+   git commit -m "Update NCR SERVICES website"
+   git push
+G. Render → ncr-services-store → Deploys → wait for the new deployment to become Live.
+H. Open the live website and press Ctrl+F5.
+
+9) IF A CHANGE DOES NOT SHOW
+- Confirm the new commit is visible on GitHub.
+- Confirm Render deployed that commit.
+- Press Ctrl+F5.
+- Check https://YOUR-RENDER-DOMAIN/api/health.
+
+10) IMPORTANT RENDER DATA NOTE
+This project uses server/data.json and assets/products for runtime data/uploads. Free Render service files can be non-persistent across certain restarts/redeployments. For permanent product image storage, use persistent/external storage or keep production images in the repository/assets.
